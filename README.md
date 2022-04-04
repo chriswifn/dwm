@@ -1,3 +1,3 @@
 # dwm
 
-My config of dwm.
+My build of dwm.
