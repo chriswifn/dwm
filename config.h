@@ -9,15 +9,14 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { 
   "Fira Code:style=Regular:size=11:antialias=true:autohint=true",
-  "JetBrains Mono Nerd Font:style=Regular:pixelsize=14:antialias=true:autohint=true",
   "JoyPixels:pixelsize=12:antialias=true:autohint=true"
 };
 static const char dmenufont[]       = "Fira Code:style=Regular:size=11:antialias=true:autohint=true";
 static const char col_gray1[]       = "#1d1f21";
-static const char col_gray2[]       = "#444444";
+static const char col_gray2[]       = "#1d1f21";
 static const char col_gray3[]       = "#c5c8c6";
-static const char col_gray4[]       = "#969896";
-static const char col_red[]         = "#cc343b";
+static const char col_gray4[]       = "#fba922";
+static const char col_red[]         = "#cc342b";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
