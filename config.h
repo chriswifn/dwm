@@ -5,26 +5,25 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int user_bh            = 18;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
-static const char *fonts[]          = { 
-    // "FiraCode-Regular:pixelsize=14:antialias=true:autohint=true",
-	"Terminus (TTF):pixelsize=18:antialias=true:autohint=true",
-    "JoyPixels:pixelsize=12:antialias=true:autohint=true"};
+static const char *fonts[]          = {
+    "Fira Code:style=Regular:size=12:antialias=true:autohint=true",
+    "JoyPixels:pixelsize=14:antialias=true:autohint=true"
+};
 static const char dmenufont[]       = "monospace:size=10";
-static const char col_gray1[]       = "#1f2227";
-static const char col_gray2[]       = "#abb2bf";
-static const char col_gray3[]       = "#282c34";
-static const char col_red[]         = "#e06c75";
+static const char col_gray1[]       = "#1d1f21";
+// static const char col_gray2[]       = "#606364";
+static const char col_gray2[]       = "#93a1a1";
+static const char col_gray3[]       = "#282828";
+static const char col_blue[]        = "#7fa2ac";
+static const char col_red[]         = "#cc241d";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray2, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray1, col_gray2, col_gray2 },
-	[SchemeTitle]  = { col_gray1, col_gray1,  col_gray1  },
+	[SchemeSel]  = { col_gray1, col_gray2,  col_gray2  },
 };
 
 /* tagging */
-// static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-static const char *tags[] = { "www", "dev", "code", "sys", "sys", "doc", "chat", "mus", "vid" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -62,7 +61,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-l", "10", NULL };
+static const char *dmenucmd[] = { "dmenu_run",};
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
@@ -86,10 +85,10 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_h,      focusmon,       {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_l,      focusmon,       {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_h,      tagmon,         {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_l,      tagmon,         {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
